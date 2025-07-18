@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomiBox - A Taste of Japan at Night</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(10, 21, 25);
+            color: #F5E4C3;
+        }
+        .hero {
+            background: url('your-background-image.png') no-repeat center center/cover;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 0rem;
+        }
+
+        .hero p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .subscribe-btn {
+            background-color: #E94E35;
+            color: #0F0F0F;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .hero, .content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero img {
+            width: 80vw;
+            max-width: 600px;
+            border-radius: 14px;
+            border: 4px solid #F5E4C3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>NomiBox</h1>
+        <p>A Taste of Japan at Night</p>
+        <img src="box0.jpg" alt="NomiBox" style="width: 90vw; margin-bottom: 2rem;">
+
+        <a href="#" class="subscribe-btn">Subscribe</a>
+    </section>
+
+    <section class="content">
+        <h2>What’s Inside NomiBox?</h2>
+        <p>Curated Japanese late-night snacks and drinks, delivered directly to your door.</p>
+
+        <h2>Why Choose NomiBox?</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li>🥢 Authentic Japanese snacks and drinks</li>
+            <li>🌙 Nightlife experience in every box</li>
+            <li>🍶 Monthly curated pairings</li>
+            <li>🚚 Shipped from Japan</li>
+        </ul>
+    </section>
+
+</body>
+</html>
