@@ -12,7 +12,6 @@
             color: #F5E4C3;
         }
         .hero {
-            background: url('your-background-image.png') no-repeat center center/cover;
             min-height: 80vh;
             display: flex;
             flex-direction: column;
@@ -50,6 +49,18 @@
             text-align: center;
         }
 
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-top: 4rem;
+        }
+
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
         .hero, .content {
             position: relative;
             z-index: 2;
@@ -61,22 +72,121 @@
             border: 4px solid #F5E4C3;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
+        .gallery {
+            background-color: #0F0F0F;
+            padding: 4rem 1rem;
+            text-align: center;
+            color: #F5E4C3;
+        }
+
+        .gallery h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 12px;
+            border: 3px solid #E94E35;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgb(10, 21, 25);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem;
+            z-index: 10;
+        }
+
+        .burger {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #F5E4C3;
+            margin-right: 1rem;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 4rem;
+            right: 0;
+            background-color: rgb(10, 21, 25);
+            border-radius: 8px 0 0 8px;
+            overflow: hidden;
+            min-width: 200px;
+            width: max-content;
+            padding-left: 0; /* removes UL indent */
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .nav-links a {
+            display: block;
+            color: #F5E4C3;
+            text-decoration: none;
+            padding: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            background: transparent;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #E94E35;
+            color: #0F0F0F;
+        }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <nav class="navbar">
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#content">What’s Inside</a></li>
+            <li><a href="#gallery">Box Designs</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="hero">
         <h1>NomiBox</h1>
         <p>A Taste of Japan at Night</p>
-        <img src="box0.jpg" alt="NomiBox" style="width: 90vw; margin-bottom: 2rem;">
-
+        <img src="res/box0.jpg" alt="NomiBox" style="width: 90vw; margin-bottom: 2rem;">
         <a href="#" class="subscribe-btn">Subscribe</a>
     </section>
 
-    <section class="content">
+    <section class="content" id="content">
         <h2>What’s Inside NomiBox?</h2>
-        <p>Curated Japanese late-night snacks and drinks, delivered directly to your door.</p>
-
+        <p>Snacks that are not chosen because they look cute, but because they are eaten every day by people living the rhythm of Japan.</p>
         <h2>Why Choose NomiBox?</h2>
         <ul style="list-style: none; padding: 0;">
             <li>🥢 Authentic Japanese snacks and drinks</li>
@@ -84,7 +194,55 @@
             <li>🍶 Monthly curated pairings</li>
             <li>🚚 Shipped from Japan</li>
         </ul>
+        <h2>Why We Made NomiBox</h2>
+        <p>
+        NomiBox is not about cute packaging or touristy gimmicks.<br><br>
+
+        It’s about bringing a piece of real Japan to your home.<br><br>
+
+        <b>It’s for people who want to crack open a drink, open a bag of crunchy crackers, and anjoy a moment of silent, peaceful rest. Just hearing the sirens in the distance, and the sounds of a nearby train passing by.</b><br><br>
+        We enjoy those nights. The simplicity of grabbing a drink and some crunchy snacks after a long day, no reservations, no fancy menus — just honest flavors, cold drinks, and the quiet hum of the city.<br><br>
+
+        Every box we send is carefully picked to recreate that feeling:<br>
+        <h3>"A good simple snack, people enjoying themselves peacefully after a day of hard work, a well deserved rest."</h3><br>
+
+        Snacks that are not chosen because they look cute, but because they are eaten every day by people living the rhythm of Japan.<br><br>
+
+        This is not a box for collectors.<br>
+
+        No filters, no nonsense. Just an honest taste of Japan after dark.
+        </p>
     </section>
+
+    <section class="gallery" id="gallery">
+        <h2>Box Designs</h2>
+        <div class="gallery-grid">
+            <img src="res/design2.png" alt="Design 2">
+            <img src="res/design6.jpg" alt="Design 4">
+            <img src="res/design5.jpg" alt="Design 3">
+            <img src="res/design3.png" alt="Design 3">
+            <img src="res/design4.JPG" alt="Design 4">
+            <img src="res/design1.jpg" alt="Design 1">
+        </div>
+    </section>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    function hideMenu() {
+        document.getElementById('navLinks').classList.remove('show');
+    }
+
+    // Attach click listeners to all nav links
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', hideMenu);
+        });
+    });
+</script>
 
 </body>
 </html>
